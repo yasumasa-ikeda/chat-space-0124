@@ -1,0 +1,26 @@
+
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+        group
+      %ul.main-header__left-box__member-list
+        Member :
+        %li.main-header__left-box__menber-list__member
+          pics
+    .main-header__edit-btn
+      edit
+  .messages
+    .message
+      .message__upper-info
+        info
+      .message__text
+        イイネイイネ
+  .form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas','image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit",class:"submit-btn"}
