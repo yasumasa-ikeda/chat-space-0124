@@ -7,8 +7,6 @@
 |nickname|string|null: false|
 ### Association
 - has_many :chats
-- has_many :comments
-- has_many :groups
 - has_many :groups_users
 
 ## chatsテーブル
@@ -17,18 +15,18 @@
 |image|text||
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
-- has_many :comments
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text||
+|name|name||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- has_many :users
 - has_many :groups_users
 
 ## groups_usersテーブル
