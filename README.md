@@ -24,7 +24,8 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|name|null: false, foreign_key: true|
+|title|title||
+|nickname|nickname||
 ### Association
 - has_many :users 
 - has_many :groups_users
