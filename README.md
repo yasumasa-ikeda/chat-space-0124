@@ -24,8 +24,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|title||
-|nickname|nickname||
+|name|string|null: false|
 ### Association
 - has_many :users 
 - has_many :groups_users
