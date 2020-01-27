@@ -1,4 +1,4 @@
-# chatspae DB設計
+# chatspace DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -8,6 +8,7 @@
 ### Association
 - has_many :chats
 - has_many :groups_users
+- has_many :groups,  through:  :groups_users
 
 ## chatsテーブル
 |Column|Type|Options|
@@ -26,8 +27,9 @@
 |name|name||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :users
+- has_many :users 
 - has_many :groups_users
+- has_many :groups,  through:  :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
