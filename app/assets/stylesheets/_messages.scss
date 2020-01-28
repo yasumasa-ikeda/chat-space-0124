@@ -16,6 +16,7 @@
         justify-content: space-between;
         width: 100%;
         font-weight: bold;
+        text-decoration: none;
         &__user-name {
           margin: 0;
           padding: 0;
@@ -35,12 +36,20 @@
       background-color: #2f3e51;
       padding: 20px 20px 0;
       overflow: scroll;
-      .group {
+      .group__group-name {
         color: white;
         text-decoration: none;
         margin-bottom: 40px;
       }
+      .group__latest-message{
+        font-size: 11px;
+        color: white;
+      }
     }   
+}
+
+.link{
+  text-decoration: none;
 }
 
 .chat-main {
@@ -73,7 +82,7 @@
       }
       &__edit-btn {
         height: 40px;
-        color:#38aef0;;
+        color:#38aef0;
         line-height: 40px;
         padding: 0 20px;
         margin-top: 30px;
