@@ -48,7 +48,7 @@
     }   
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
@@ -90,59 +90,74 @@
         position: absolute;
         right: 40px;
       } 
-   }
+    }
   .messages{
       height: calc(100vh - 190px);
       padding: 46px 40px;
       background-color: #fafafa;
       overflow: scroll;
-   }
-  .message {
-        margin: 0;
-        padding: 0;
-        &__upper-info {
-          margin: 0;
-          padding: 0;
-          color: black;
+    }
+    .message {
+      padding-bottom: 40px;
+      .upper-message {
+        display: flex;
+        margin-bottom: 10px;
+        color: black;
+        .upper-message__user-name {
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }  
+        .upper-message__date {  
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;        
         }
-        &__text {
-          margin: 0;
-          padding: 0;
-          color: black;
+
+      }
+      .lower-message {
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 10px;
+        .lower-message__content{
+          border: 0;
         }
-   }
+      }
+    }
 
   .form {
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
 
-    form {
+    .new_message {
       display: flex;
-      .input-box {
-        display: flex;
-        width: 100%;
-        position: relative;
-        &__text {
-            height: 50px;
+
+        .form__mask {
+          height: 50px;
+          width: 100%;
+          color: #434a54;
+          border-style: none;
+          display: flex;
+          position: relative;
+
+          .form__message {
             width: 100%;
-            color: #434a54;
-            border-style: none;
-            padding: 0 40px 0 10px;
-        }
-        &__image {
+          }
+
+          .image-label {
+            font-size: 1.3rem;
             position: absolute;
             top: 10px;
             right: 10px;
             cursor: pointer;
-            font-size: 1.3rem;
 
-        &__file {
+            .hidden {
               display: none;
             }
-         }  
-      }  
-      .submit-btn {
+          }
+        }
+        .form__submit {
           width: 100px;
           height: 50px;
           padding: 12px 30px;
@@ -150,7 +165,7 @@
           background-color: #38aef0;
           color: white;
           cursor: pointer;
-
         }
-     }
-  }        
+      }
+
+    }
