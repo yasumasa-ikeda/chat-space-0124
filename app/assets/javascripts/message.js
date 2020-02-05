@@ -1,7 +1,7 @@
 $(function(){ 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
+      var html = `<div class="message" data-message-id=`+ message.id + `>` +
         `<div class="upper-message">` +
           `<div class="upper-message__user-name">` +
             message.user_name +
@@ -71,7 +71,6 @@ $(function(){
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function() {
-      console.log(last_message_id);
       alert("メッセージ送信に失敗しました");
     });
   });
@@ -79,7 +78,6 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').data("message-id");
-    console.log(last_message_id)
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/messages",
@@ -90,7 +88,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages)
       if (messages.length !== 0) {        
         //追加するHTMLの入れ物を作る
         var insertHTML = '';
@@ -104,15 +101,9 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
     });
-    // if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    //   setInterval(reloadMessages, 7000);
-    //   console.log('aaaaa');
-    // }
   }; 
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
-    console.log('aaaaa');
   }  
 });
