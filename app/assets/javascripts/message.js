@@ -59,6 +59,7 @@ $('#new_message').on('submit', function(e){
     $('#new_message')[0].reset()
   })
   .fail(function() {
+    $('.form__submit').prop('disabled', false);
     window.alert("メッセージ送信に失敗しました");
     });
   });
