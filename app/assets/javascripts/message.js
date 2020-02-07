@@ -61,7 +61,7 @@ $('#new_message').on('submit', function(e){
   .fail(function() {
     $('.form__submit').prop('disabled', false);
     window.alert("メッセージ送信に失敗しました");
-    });
+    }); 
   });
 
   var reloadMessages = function() {
